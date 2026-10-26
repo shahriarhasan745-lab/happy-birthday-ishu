@@ -1,56 +1,97 @@
 // ==========================================
-// CONFIGURATION: 10 Images & Birthday Wishes
+// CONFIGURATION: 15 Pages with 2 Photos Each
+// Using the image filenames provided in screenshots
 // ==========================================
 const scrapbookData = [
     {
-        image: "images/pic1.jpg",
-        tag: "Chapter 1: The Beginning 🎈",
-        wish: "Happy Birthday to my favorite human! Cheers to another year of making questionable life choices together and surviving to tell the tale."
+        image1: "868403049_2034146983938570_365889107342376931_n.jpg",
+        image2: "867070386_975619545618629_3336066903520033502_n.jpg",
+        tag: "Chapter 1: Beautiful Beginning 🎈",
+        wish: "Happy Birthday to my favorite human! Cheers to another year of making questionable life choices together."
     },
     {
-        image: "images/pic2.jpg",
+        image1: "865862834_1496768158985678_6985069026965173472_n.jpg",
+        image2: "865739118_1175957871661541_6265686729919635046_n.jpg",
         tag: "Chapter 2: Eternal Youth 🎂",
-        wish: "Don't count the candles, just enjoy the glow! You're not getting older, you're just becoming a vintage classic edition."
+        wish: "Don't count the candles, just enjoy the glow! You're not getting older, you're becoming a vintage classic edition."
     },
     {
-        image: "images/pic3.jpg",
+        image1: "864178927_1016512707515714_4418618544865811491_n.jpg",
+        image2: "864121715_2719584235125921_7176428879991977859_n.jpg",
         tag: "Chapter 3: Partner in Crime 🕵️‍♂️",
-        wish: "They say wisdom comes with age... guess that means you're still a toddler! Wishing you a day filled with laughter and zero adult responsibilities."
+        wish: "Wishing you a day filled with endless laughter, zero responsibilities, and unlimited happy memories!"
     },
     {
-        image: "images/pic4.jpg",
+        image1: "862948692_1113680281040082_49915280495487114_n.jpg",
+        image2: "862653981_1630008375522450_1093298957683069808_n.jpg",
         tag: "Chapter 4: Party Animal 🎉",
-        wish: "Another year around the sun! May your hair stay full, your back stay pain-free, and your birthday cake stay enormous."
+        wish: "Another year around the sun! May your smile stay bright, your heart stay full, and your cake stay huge!"
     },
     {
-        image: "images/pic5.jpg",
-        tag: "Chapter 5: Unstoppable ⚡",
-        wish: "Keep smiling while you still have all your original teeth! Just kidding—you're looking as gorgeous and vibrant as ever. Have the best day!"
+        image1: "862653981_1630008375522450_1093298957683069808_n (1).jpg",
+        image2: "861533507_1795156331723948_5146577588199318099_n.jpg",
+        tag: "Chapter 5: Unstoppable Vibes ⚡",
+        wish: "Keep smiling and shining bright as always! You're looking as gorgeous and vibrant as ever today."
     },
     {
-        image: "images/pic6.jpg",
-        tag: "Chapter 6: Good Vibes Only 🌟",
-        wish: "Happy Birthday! I was going to roast you, but the fire hazard from all your birthday candles is already dangerous enough."
+        image1: "859884538_2110975712857755_6045011585703822527_n.jpg",
+        image2: "857187213_2324266725003230_8858900254570656757_n.jpg",
+        tag: "Chapter 6: Good Times 🌟",
+        wish: "Happy Birthday! Here's to more secret jokes, late-night chats, and unforgettable moments together."
     },
     {
-        image: "images/pic7.jpg",
+        image1: "857187213_2324266725003230_8858900254570656757_n (1).jpg",
+        image2: "856690705_1149361057431510_7930650617370625869_n.jpg",
         tag: "Chapter 7: Sweet Memories 🍭",
-        wish: "Here's to a person who is smart, charming, funny, and reminds me a lot of myself! May your birthday be as awesome as you are."
+        wish: "May your day be as sweet, cheerful, and charming as you are to everyone around you!"
     },
     {
-        image: "images/pic8.jpg",
-        tag: "Chapter 8: Dreamer 🌈",
-        wish: "Age is merely the number of years the world has been enjoying your presence. Keep shining and spreading your infectious joy!"
+        image1: "856690705_1149361057431510_7930650617370625869_n (1).jpg",
+        image2: "868403049_2034146983938570_365889107342376931_n.jpg",
+        tag: "Chapter 8: Dreamer & Doer 🌈",
+        wish: "Age is merely a number! Keep chasing your big dreams and spreading your infectious joy everywhere."
     },
     {
-        image: "images/pic9.jpg",
-        tag: "Chapter 9: Golden Times 🏆",
-        wish: "May your day be filled with lots of love, endless happiness, and cake—mostly cake. You deserve all the good things today and always."
+        image1: "867070386_975619545618629_3336066903520033502_n.jpg",
+        image2: "865862834_1496768158985678_6985069026965173472_n.jpg",
+        tag: "Chapter 9: Golden Memories 🏆",
+        wish: "May your year ahead be filled with lots of love, success, and tons of delicious birthday cake!"
     },
     {
-        image: "images/pic10.jpg",
-        tag: "Chapter 10: Grand Finale 🎆",
-        wish: "Happy Birthday my friend! May this new chapter bring you endless adventures, boundless joy, and all the success in the world. Cheers!"
+        image1: "865739118_1175957871661541_6265686729919635046_n.jpg",
+        image2: "864178927_1016512707515714_4418618544865811491_n.jpg",
+        tag: "Chapter 10: Pure Happiness ✨",
+        wish: "To a wonderful person who brings so much warmth and happiness to our lives every single day!"
+    },
+    {
+        image1: "864121715_2719584235125921_7176428879991977859_n.jpg",
+        image2: "862948692_1113680281040082_49915280495487114_n.jpg",
+        tag: "Chapter 11: Crazy Adventures 🚀",
+        wish: "Life is an adventure, and having you along makes it 100 times better! Happy Birthday!"
+    },
+    {
+        image1: "862653981_1630008375522450_1093298957683069808_n.jpg",
+        image2: "861533507_1795156331723948_5146577588199318099_n.jpg",
+        tag: "Chapter 12: Radiant Smiles 😊",
+        wish: "Never lose that innocent smile of yours. Hope your birthday brings you as much joy as you give to others."
+    },
+    {
+        image1: "859884538_2110975712857755_6045011585703822527_n.jpg",
+        image2: "857187213_2324266725003230_8858900254570656757_n.jpg",
+        tag: "Chapter 13: Best Times 🌸",
+        wish: "Looking back at all these pictures makes me realize how lucky I am to share these memories with you!"
+    },
+    {
+        image1: "856690705_1149361057431510_7930650617370625869_n.jpg",
+        image2: "868403049_2034146983938570_365889107342376931_n.jpg",
+        tag: "Chapter 14: Forever Friends 💖",
+        wish: "No matter how many years pass, we'll always remain as weird and crazy together as day one!"
+    },
+    {
+        image1: "867070386_975619545618629_3336066903520033502_n.jpg",
+        image2: "865862834_1496768158985678_6985069026965173472_n.jpg",
+        tag: "Chapter 15: Grand Finale 🎆",
+        wish: "Wishing you the absolute best birthday ever! May all your dreams come true this year! Cheers! 🎉"
     }
 ];
 
@@ -121,7 +162,7 @@ function createFloatingElements() {
     }
 }
 
-// Render 10 Scrapbook Pages (Layout adjustments for text & photo height)
+// Render 15 Scrapbook Pages with 2-Photo Collage Layout
 function renderPages() {
     const wrapper = document.getElementById('pages-wrapper');
     wrapper.innerHTML = '';
@@ -132,22 +173,28 @@ function renderPages() {
         pageEl.className = `scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-4 md:p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 ${index === 0 ? 'page-active' : 'page-hidden-next'}`;
 
         pageEl.innerHTML = `
-            <!-- Left Column: Polaroid Photo with Swaying Animation -->
-            <div class="w-full md:w-1/2 flex flex-col items-center justify-center relative pt-3">
-                <div class="washi-tape absolute -top-1 left-1/2 -translate-x-1/2 w-24 h-6 z-20 rotate-[-2deg]"></div>
-                
-                <div class="polaroid w-full max-w-[240px] md:max-w-[280px]">
-                    <div class="w-full h-44 md:h-52 overflow-hidden bg-amber-100 rounded shadow-inner">
-                        <img src="${data.image}" alt="Memory ${index + 1}" class="w-full h-full object-cover">
+            <!-- Left Column: 2 Photos Overlapping Scrapbook Collage -->
+            <div class="w-full md:w-1/2 flex items-center justify-center relative h-64 md:h-full">
+                <!-- Photo 1 (Tilted Left) -->
+                <div class="photo-frame-1 absolute left-2 md:left-4 top-4 w-36 md:w-44 bg-white p-2 pb-6 shadow-xl border border-amber-200 rounded z-10">
+                    <div class="w-full h-32 md:h-38 overflow-hidden bg-amber-100 rounded">
+                        <img src="${data.image1}" alt="Memory A" class="w-full h-full object-cover">
                     </div>
-                    <div class="mt-2 text-center text-amber-950 text-lg md:text-xl font-bold tracking-wide">
+                </div>
+
+                <!-- Photo 2 (Tilted Right Overlapping) -->
+                <div class="photo-frame-2 absolute right-2 md:right-6 bottom-4 w-38 md:w-48 bg-white p-2 pb-6 shadow-2xl border border-amber-200 rounded z-20">
+                    <div class="w-full h-36 md:h-42 overflow-hidden bg-amber-100 rounded">
+                        <img src="${data.image2}" alt="Memory B" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-1 text-center text-amber-950 text-sm md:text-base font-bold">
                         ${data.tag}
                     </div>
                 </div>
             </div>
 
             <!-- Right Column: Properly Spaced Animated Handwriting Text -->
-            <div class="w-full md:w-1/2 flex flex-col justify-between h-full text-left relative py-2 pr-2">
+            <div class="w-full md:w-1/2 flex flex-col justify-between h-full text-left relative py-2 pr-2 z-20">
                 <div class="text-amber-900/25 text-4xl font-serif leading-none select-none mb-1">“</div>
                 
                 <div class="flex-1 flex items-center">
@@ -215,7 +262,7 @@ function triggerParticleBurst() {
     }
 }
 
-// Real-time typewriter writing simulation (No overlapping text)
+// Real-time typewriter writing simulation
 function animateHandwriting(pageIndex) {
     if (typingInterval) clearInterval(typingInterval);
 
