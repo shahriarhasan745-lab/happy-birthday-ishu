@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extreme Vintage Birthday Scrapbook</title>
+    <title>Extreme Vintage Birthday Scrapbook (15 Pages)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -21,7 +21,7 @@
     <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/80 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-700">
         <div class="bg-[#f4eccf] border-4 border-amber-900/40 p-8 rounded-3xl shadow-2xl max-w-md w-full">
             <h2 class="heading-font text-3xl text-amber-900 mb-3">✨ A Special Gift For You ✨</h2>
-            <p class="text-xl text-amber-800 mb-6 font-semibold">Click below to open your vintage scrapbook with music & magical animations!</p>
+            <p class="text-xl text-amber-800 mb-6 font-semibold">Click below to open your 15-page vintage scrapbook with music & magical animations!</p>
             <button onclick="startScrapbook()" class="px-8 py-3 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-lg hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
                 <i class="fa-solid fa-heart text-rose-400 animate-pulse"></i> Open Scrapbook
             </button>
@@ -38,7 +38,7 @@
     <!-- Particle Burst Container -->
     <div id="particle-container" class="fixed inset-0 pointer-events-none z-30"></div>
 
-    <!-- Header Section (Padding standard, overlap stop) -->
+    <!-- Header Section -->
     <header class="pt-4 pb-1 text-center z-10 px-4 flex items-center justify-center gap-4 relative">
         <div>
             <h1 class="heading-font text-2xl md:text-4xl font-bold tracking-widest text-amber-900 drop-shadow-md">
@@ -53,10 +53,10 @@
         </button>
     </header>
 
-    <!-- Main Scrapbook Container (Niche namano ebong height fix) -->
+    <!-- Main Scrapbook Container -->
     <main class="flex-1 flex items-center justify-center p-4 z-10 relative my-2">
-        <div class="scrapbook-container w-full max-w-4xl h-[480px] md:h-[450px] relative">
-            <!-- 10 Pages Dynamic Wrapper -->
+        <div class="scrapbook-container w-full max-w-5xl h-[520px] md:h-[480px] relative">
+            <!-- 15 Pages Dynamic Wrapper -->
             <div id="pages-wrapper" class="w-full h-full relative"></div>
         </div>
     </main>
@@ -68,8 +68,8 @@
                 <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Prev</span>
             </button>
 
-            <div class="text-xl md:text-2xl font-bold text-amber-900 min-w-[90px]">
-                Page <span id="page-num">1</span> / 10
+            <div class="text-xl md:text-2xl font-bold text-amber-900 min-w-[110px]">
+                Page <span id="page-num">1</span> / 15
             </div>
 
             <button onclick="toggleAutoplay()" class="px-3 py-2 bg-amber-200 text-amber-900 rounded-full text-lg hover:bg-amber-300 transition flex items-center gap-1 border border-amber-400">
