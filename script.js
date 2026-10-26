@@ -3,7 +3,7 @@
 // ==========================================
 const scrapbookData = [
     {
-        image: "images/pic1.jpg", // Tomar image path/folder name
+        image: "images/pic1.jpg",
         tag: "Chapter 1: The Beginning 🎈",
         wish: "Happy Birthday to my favorite human! Cheers to another year of making questionable life choices together and surviving to tell the tale."
     },
@@ -69,7 +69,6 @@ function startScrapbook() {
         overlay.style.display = 'none';
     }, 700);
 
-    // Play Background Song
     const audio = document.getElementById('bg-music');
     audio.play().then(() => {
         isMusicPlaying = true;
@@ -98,13 +97,13 @@ function toggleMusic() {
 function updateMusicIcon() {
     const icon = document.getElementById('musicIcon');
     if (isMusicPlaying) {
-        icon.className = 'fa-solid fa-music text-xl text-rose-700 animate-pulse';
+        icon.className = 'fa-solid fa-music text-lg md:text-xl text-rose-700 animate-pulse';
     } else {
-        icon.className = 'fa-solid fa-volume-xmark text-xl text-amber-900/50';
+        icon.className = 'fa-solid fa-volume-xmark text-lg md:text-xl text-amber-900/50';
     }
 }
 
-// Generate ambient floating elements in background
+// Generate ambient floating elements
 function createFloatingElements() {
     const container = document.getElementById('ambient-container');
     const icons = ['✨', '🎈', '⭐', '💖', '🎂', '🌸', '💫'];
@@ -122,7 +121,7 @@ function createFloatingElements() {
     }
 }
 
-// Render 10 Scrapbook Pages dynamically
+// Render 10 Scrapbook Pages (Layout adjustments for text & photo height)
 function renderPages() {
     const wrapper = document.getElementById('pages-wrapper');
     wrapper.innerHTML = '';
@@ -130,34 +129,35 @@ function renderPages() {
     scrapbookData.forEach((data, index) => {
         const pageEl = document.createElement('div');
         pageEl.id = `page-${index}`;
-        pageEl.className = `scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 ${index === 0 ? 'page-active' : 'page-hidden-next'}`;
+        pageEl.className = `scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-4 md:p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 ${index === 0 ? 'page-active' : 'page-hidden-next'}`;
 
         pageEl.innerHTML = `
-            <!-- Left Column: Polaroid Photo -->
-            <div class="w-full md:w-1/2 flex flex-col items-center justify-center relative">
-                <!-- Tape Decoration -->
-                <div class="washi-tape absolute -top-4 left-1/2 -translate-x-1/2 w-28 h-7 z-20 rotate-[-2deg]"></div>
+            <!-- Left Column: Polaroid Photo with Swaying Animation -->
+            <div class="w-full md:w-1/2 flex flex-col items-center justify-center relative pt-3">
+                <div class="washi-tape absolute -top-1 left-1/2 -translate-x-1/2 w-24 h-6 z-20 rotate-[-2deg]"></div>
                 
-                <div class="polaroid w-full max-w-[280px] md:max-w-[310px]">
-                    <div class="w-full h-48 md:h-60 overflow-hidden bg-amber-100 rounded shadow-inner">
-                        <img src="${data.image}" alt="Memory ${index + 1}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                <div class="polaroid w-full max-w-[240px] md:max-w-[280px]">
+                    <div class="w-full h-44 md:h-52 overflow-hidden bg-amber-100 rounded shadow-inner">
+                        <img src="${data.image}" alt="Memory ${index + 1}" class="w-full h-full object-cover">
                     </div>
-                    <div class="mt-3 text-center text-amber-950 text-xl font-bold tracking-wide">
+                    <div class="mt-2 text-center text-amber-950 text-lg md:text-xl font-bold tracking-wide">
                         ${data.tag}
                     </div>
                 </div>
             </div>
 
-            <!-- Right Column: Animated Handwriting Text -->
-            <div class="w-full md:w-1/2 flex flex-col justify-center h-full text-left relative pl-2 md:pl-4">
-                <div class="text-amber-900/30 text-5xl absolute -top-4 left-0 font-serif">“</div>
+            <!-- Right Column: Properly Spaced Animated Handwriting Text -->
+            <div class="w-full md:w-1/2 flex flex-col justify-between h-full text-left relative py-2 pr-2">
+                <div class="text-amber-900/25 text-4xl font-serif leading-none select-none mb-1">“</div>
                 
-                <div id="text-target-${index}" class="text-2xl md:text-3xl lg:text-4xl text-amber-900 leading-relaxed font-semibold min-h-[140px] flex items-center">
-                    <!-- Typing animation text goes here -->
+                <div class="flex-1 flex items-center">
+                    <div id="text-target-${index}" class="text-xl md:text-2xl lg:text-3xl text-amber-900 leading-relaxed font-semibold min-h-[120px] w-full">
+                        <!-- Typing animation text renders here -->
+                    </div>
                 </div>
                 
-                <div class="mt-4 text-right">
-                    <span class="inline-block border-b-2 border-amber-800/40 text-amber-800 text-lg md:text-xl italic">
+                <div class="text-right mt-2">
+                    <span class="inline-block border-b-2 border-amber-800/40 text-amber-800 text-base md:text-lg italic">
                         ~ Forever & Always 💕
                     </span>
                 </div>
@@ -167,18 +167,18 @@ function renderPages() {
     });
 }
 
-// Display page with extreme particle burst effect
+// Display page with particle burst effect
 function showPage(pageIndex) {
     const totalPages = scrapbookData.length;
     
     for (let i = 0; i < totalPages; i++) {
         const page = document.getElementById(`page-${i}`);
         if (i === pageIndex) {
-            page.className = 'scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 page-active';
+            page.className = 'scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-4 md:p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 page-active';
         } else if (i < pageIndex) {
-            page.className = 'scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 page-hidden-prev';
+            page.className = 'scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-4 md:p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 page-hidden-prev';
         } else {
-            page.className = 'scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 page-hidden-next';
+            page.className = 'scrapbook-page absolute inset-0 w-full h-full bg-[#faf4e1] border-2 border-amber-900/20 rounded-2xl p-4 md:p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 page-hidden-next';
         }
     }
 
@@ -215,7 +215,7 @@ function triggerParticleBurst() {
     }
 }
 
-// Real-time typewriter ink writing simulation
+// Real-time typewriter writing simulation (No overlapping text)
 function animateHandwriting(pageIndex) {
     if (typingInterval) clearInterval(typingInterval);
 
@@ -235,10 +235,10 @@ function animateHandwriting(pageIndex) {
             clearInterval(typingInterval);
             target.classList.remove('typing-cursor');
         }
-    }, 30); // Writing speed
+    }, 30);
 }
 
-// Change Page (Next / Prev)
+// Change Page
 function changePage(direction) {
     currentPage += direction;
     if (currentPage >= scrapbookData.length) currentPage = 0;
@@ -256,7 +256,7 @@ function startAutoplay() {
     if (autoplayTimer) clearInterval(autoplayTimer);
     autoplayTimer = setInterval(() => {
         changePage(1);
-    }, 7000); // 7 seconds per page
+    }, 7000);
 }
 
 function stopAutoplay() {
