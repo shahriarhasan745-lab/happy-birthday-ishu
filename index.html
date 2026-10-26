@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extreme Vintage Birthday Scrapbook</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen text-amber-950 flex flex-col justify-between relative selection:bg-amber-300 overflow-x-hidden">
+
+    <!-- Welcome Overlay to Enable Audio & Start Experience -->
+    <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/80 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-700">
+        <div class="bg-[#f4eccf] border-4 border-amber-900/40 p-8 rounded-3xl shadow-2xl max-w-md w-full animate-bounce-slow">
+            <h2 class="heading-font text-3xl text-amber-900 mb-3">✨ A Special Gift For You ✨</h2>
+            <p class="text-xl text-amber-800 mb-6 font-semibold">Click below to open your vintage scrapbook with music & magical animations!</p>
+            <button onclick="startScrapbook()" class="px-8 py-3 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-lg hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
+                <i class="fa-solid fa-heart text-rose-400 animate-pulse"></i> Open Scrapbook
+            </button>
+        </div>
+    </div>
+
+    <!-- Background Audio (You can replace the src link with your own song link or local mp3 file) -->
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sentiments-173.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Ambient Floating Background Elements -->
+    <div id="ambient-container"></div>
+    <!-- Particle Burst Container -->
+    <div id="particle-container" class="fixed inset-0 pointer-events-none z-30"></div>
+
+    <!-- Header Section -->
+    <header class="pt-6 pb-2 text-center z-10 px-4 flex items-center justify-center gap-4 relative">
+        <div>
+            <h1 class="heading-font text-3xl md:text-5xl font-bold tracking-widest text-amber-900 drop-shadow-md">
+                ✨ MEMORY SCRAPBOOK ✨
+            </h1>
+            <p class="text-xl md:text-2xl text-amber-800 italic mt-1 font-semibold">
+                Celebrating Your Special Day!
+            </p>
+        </div>
+        <!-- Music Toggle Button -->
+        <button onclick="toggleMusic()" id="musicBtn" class="absolute right-6 top-6 w-12 h-12 bg-amber-200/90 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-900 shadow-lg hover:scale-110 transition z-20" title="Toggle Music">
+            <i id="musicIcon" class="fa-solid fa-music text-xl"></i>
+        </button>
+    </header>
+
+    <!-- Main Scrapbook Container -->
+    <main class="flex-1 flex items-center justify-center p-4 z-10 relative">
+        <div class="scrapbook-container w-full max-w-4xl min-h-[500px] md:min-h-[460px] relative">
+            <!-- 10 Pages Dynamic Wrapper -->
+            <div id="pages-wrapper" class="w-full h-full relative"></div>
+        </div>
+    </main>
+
+    <!-- Controls & Footer Section -->
+    <footer class="pb-6 pt-2 text-center z-20 px-4">
+        <div class="inline-flex items-center gap-3 md:gap-6 bg-amber-100/90 backdrop-blur border-2 border-amber-300 px-6 py-3 rounded-full shadow-xl">
+            <!-- Previous Button -->
+            <button onclick="changePage(-1)" class="px-4 py-2 bg-amber-800 text-amber-50 rounded-full text-lg hover:bg-amber-900 hover:scale-105 transition flex items-center gap-2 shadow">
+                <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Prev</span>
+            </button>
+
+            <!-- Page Number Indicator -->
+            <div class="text-xl md:text-2xl font-bold text-amber-900 min-w-[90px]">
+                Page <span id="page-num">1</span> / 10
+            </div>
+
+            <!-- Auto-Play Toggle Button -->
+            <button onclick="toggleAutoplay()" class="px-3 py-2 bg-amber-200 text-amber-900 rounded-full text-lg hover:bg-amber-300 transition flex items-center gap-1 border border-amber-400">
+                <i id="playIcon" class="fa-solid fa-pause"></i>
+                <span id="playText" class="text-base font-sans hidden sm:inline">Auto</span>
+            </button>
+
+            <!-- Next Button -->
+            <button onclick="changePage(1)" class="px-4 py-2 bg-amber-800 text-amber-50 rounded-full text-lg hover:bg-amber-900 hover:scale-105 transition flex items-center gap-2 shadow">
+                <span class="hidden sm:inline">Next</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
