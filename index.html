@@ -17,9 +17,9 @@
 </head>
 <body class="min-h-screen text-amber-950 flex flex-col justify-between relative selection:bg-amber-300 overflow-x-hidden">
 
-    <!-- Welcome Overlay to Enable Audio & Start Experience -->
+    <!-- Welcome Overlay -->
     <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/80 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-700">
-        <div class="bg-[#f4eccf] border-4 border-amber-900/40 p-8 rounded-3xl shadow-2xl max-w-md w-full animate-bounce-slow">
+        <div class="bg-[#f4eccf] border-4 border-amber-900/40 p-8 rounded-3xl shadow-2xl max-w-md w-full">
             <h2 class="heading-font text-3xl text-amber-900 mb-3">✨ A Special Gift For You ✨</h2>
             <p class="text-xl text-amber-800 mb-6 font-semibold">Click below to open your vintage scrapbook with music & magical animations!</p>
             <button onclick="startScrapbook()" class="px-8 py-3 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-lg hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
@@ -28,60 +28,55 @@
         </div>
     </div>
 
-    <!-- Background Audio (You can replace the src link with your own song link or local mp3 file) -->
+    <!-- Background Audio -->
     <audio id="bg-music" loop>
         <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sentiments-173.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Ambient Floating Background Elements -->
+    <!-- Ambient Floating Elements -->
     <div id="ambient-container"></div>
     <!-- Particle Burst Container -->
     <div id="particle-container" class="fixed inset-0 pointer-events-none z-30"></div>
 
-    <!-- Header Section -->
-    <header class="pt-6 pb-2 text-center z-10 px-4 flex items-center justify-center gap-4 relative">
+    <!-- Header Section (Padding standard, overlap stop) -->
+    <header class="pt-4 pb-1 text-center z-10 px-4 flex items-center justify-center gap-4 relative">
         <div>
-            <h1 class="heading-font text-3xl md:text-5xl font-bold tracking-widest text-amber-900 drop-shadow-md">
+            <h1 class="heading-font text-2xl md:text-4xl font-bold tracking-widest text-amber-900 drop-shadow-md">
                 ✨ MEMORY SCRAPBOOK ✨
             </h1>
-            <p class="text-xl md:text-2xl text-amber-800 italic mt-1 font-semibold">
+            <p class="text-base md:text-xl text-amber-800 italic mt-0.5 font-semibold">
                 Celebrating Your Special Day!
             </p>
         </div>
-        <!-- Music Toggle Button -->
-        <button onclick="toggleMusic()" id="musicBtn" class="absolute right-6 top-6 w-12 h-12 bg-amber-200/90 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-900 shadow-lg hover:scale-110 transition z-20" title="Toggle Music">
-            <i id="musicIcon" class="fa-solid fa-music text-xl"></i>
+        <button onclick="toggleMusic()" id="musicBtn" class="absolute right-4 top-4 w-10 h-10 md:w-12 md:h-12 bg-amber-200/90 border-2 border-amber-500 rounded-full flex items-center justify-center text-amber-900 shadow-lg hover:scale-110 transition z-20" title="Toggle Music">
+            <i id="musicIcon" class="fa-solid fa-music text-lg md:text-xl"></i>
         </button>
     </header>
 
-    <!-- Main Scrapbook Container -->
-    <main class="flex-1 flex items-center justify-center p-4 z-10 relative">
-        <div class="scrapbook-container w-full max-w-4xl min-h-[500px] md:min-h-[460px] relative">
+    <!-- Main Scrapbook Container (Niche namano ebong height fix) -->
+    <main class="flex-1 flex items-center justify-center p-4 z-10 relative my-2">
+        <div class="scrapbook-container w-full max-w-4xl h-[480px] md:h-[450px] relative">
             <!-- 10 Pages Dynamic Wrapper -->
             <div id="pages-wrapper" class="w-full h-full relative"></div>
         </div>
     </main>
 
     <!-- Controls & Footer Section -->
-    <footer class="pb-6 pt-2 text-center z-20 px-4">
-        <div class="inline-flex items-center gap-3 md:gap-6 bg-amber-100/90 backdrop-blur border-2 border-amber-300 px-6 py-3 rounded-full shadow-xl">
-            <!-- Previous Button -->
+    <footer class="pb-5 pt-1 text-center z-20 px-4">
+        <div class="inline-flex items-center gap-3 md:gap-6 bg-amber-100/90 backdrop-blur border-2 border-amber-300 px-6 py-2.5 rounded-full shadow-xl">
             <button onclick="changePage(-1)" class="px-4 py-2 bg-amber-800 text-amber-50 rounded-full text-lg hover:bg-amber-900 hover:scale-105 transition flex items-center gap-2 shadow">
                 <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Prev</span>
             </button>
 
-            <!-- Page Number Indicator -->
             <div class="text-xl md:text-2xl font-bold text-amber-900 min-w-[90px]">
                 Page <span id="page-num">1</span> / 10
             </div>
 
-            <!-- Auto-Play Toggle Button -->
             <button onclick="toggleAutoplay()" class="px-3 py-2 bg-amber-200 text-amber-900 rounded-full text-lg hover:bg-amber-300 transition flex items-center gap-1 border border-amber-400">
                 <i id="playIcon" class="fa-solid fa-pause"></i>
                 <span id="playText" class="text-base font-sans hidden sm:inline">Auto</span>
             </button>
 
-            <!-- Next Button -->
             <button onclick="changePage(1)" class="px-4 py-2 bg-amber-800 text-amber-50 rounded-full text-lg hover:bg-amber-900 hover:scale-105 transition flex items-center gap-2 shadow">
                 <span class="hidden sm:inline">Next</span> <i class="fa-solid fa-arrow-right"></i>
             </button>
