@@ -80,7 +80,7 @@ const scrapbookData = [
         image2: "jpg12",
         image3: "jpg14",
         tag: "Chapter 10: Chaos Crew ✨",
-        wish: "Shoutout to the only person who can match my level of madness every single day."
+        wish: "Shoutout to the only person who can't match my level of madness every single day."
     },
     {
         type: 'standard',
@@ -104,7 +104,7 @@ const scrapbookData = [
         image2: "jpg8",
         image3: "jpg13",
         tag: "Chapter 13: Vintage Era 🌸",
-        wish: "Looking at these old pictures reminds me of how weird we both were... wait, we still are!"
+        wish: "Looking at these old pictures reminds me of how weird you and jannat both there... wait, you still are!"
     },
     {
         type: 'standard',
@@ -112,7 +112,7 @@ const scrapbookData = [
         image2: "jpg11",
         image3: "jpg15",
         tag: "Chapter 14: Partners in Crime 💖",
-        wish: "We will always be best friends because you already know way too many embarrassing secrets about me!"
+        wish: "we will always close friends because you already know way too many embarrassing secrets about me!"
     },
     {
         type: 'standard',
