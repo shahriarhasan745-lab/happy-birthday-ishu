@@ -8,7 +8,7 @@ const scrapbookData = [
         image2: "jpg2",
         image3: "jpg3",
         tag: "Chapter 1: Beautiful Beginning 🎈",
-        wish: "Happy Birthday to my favorite human! God knows how I tolerate your dramatic behavior every single day."
+        wish: "Happy Birthday to my favorite daughter! God knows how I tolerate your dramatic behavior every single day."
     },
     {
         type: 'standard',
