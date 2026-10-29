@@ -17,35 +17,24 @@
 </head>
 <body class="min-h-screen text-amber-950 flex flex-col justify-between relative selection:bg-amber-300 overflow-x-hidden">
 
-    <!-- Gorgeous Animated Birthday Cake Cover Page (Welcome Overlay) -->
-    <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/90 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-all duration-700">
+    <!-- Welcome Overlay -->
+    <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/90 backdrop-blur-md z-[9999] flex flex-col items-center justify-center text-center p-6 transition-all duration-500">
         <div class="bg-[#faf4e1] border-4 border-amber-900/60 p-8 rounded-3xl shadow-2xl max-w-lg w-full relative overflow-hidden">
-            <!-- Decorative Ribbon / Stamp -->
-            <div class="absolute -top-10 -right-10 w-28 h-28 bg-rose-500/20 rounded-full blur-xl pointer-events-none"></div>
-
-            <!-- Animated Birthday Cake Icon -->
             <div class="relative w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-amber-200/60 border-2 border-amber-800/40 rounded-full shadow-inner">
-                <div class="absolute -top-3 flex gap-1.5 animate-bounce">
-                    <span class="text-xs bg-amber-500 w-1.5 h-4 rounded-full shadow-lg">🔥</span>
-                    <span class="text-xs bg-rose-500 w-1.5 h-4 rounded-full shadow-lg">🔥</span>
-                    <span class="text-xs bg-amber-500 w-1.5 h-4 rounded-full shadow-lg">🔥</span>
-                </div>
                 <span class="text-5xl mt-3">🎂</span>
             </div>
-
             <h2 class="heading-font text-3xl md:text-4xl text-amber-900 mb-2 font-bold tracking-wide">✨ Happy Birthday! ✨</h2>
             <p class="text-lg text-amber-800 mb-6 font-semibold italic">
-                A magical 16-page vintage scrapbook crafted specially for you, filled with memories, music, and sweet surprises! 💖
+                A magical 16-page vintage scrapbook crafted specially for you, filled with roasting, music & funny surprises! 💖
             </p>
-
-            <button onclick="startScrapbook()" class="px-8 py-3.5 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-xl hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto border-2 border-amber-400">
+            <button id="open-gift-btn" onclick="startScrapbook()" class="px-8 py-3.5 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-xl hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto border-2 border-amber-400 cursor-pointer z-50">
                 <i class="fa-solid fa-gift text-rose-400 animate-pulse"></i> Open Your Gift 🎈
             </button>
         </div>
     </div>
 
     <!-- Background Audio -->
-    <audio id="bg-music" loop>
+    <audio id="bg-music" loop preload="auto">
         <source src="rudo_made_it_COSKO_-_Golden_Brown_x_Love_Story_-_Slowed_(mp3.pm) (1).mp3" type="audio/mpeg">
         Apnar browser audio tag support kore na.
     </audio>
