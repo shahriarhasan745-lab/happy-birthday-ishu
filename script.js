@@ -1,5 +1,5 @@
 // ==========================================
-// CONFIGURATION: 16 Pages (3 Photos per Page + Pure Roasting & Funny Vibes)
+// (the birthday of my addopted child ishaaa)
 // ==========================================
 const scrapbookData = [
     {
