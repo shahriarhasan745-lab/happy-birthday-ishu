@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPPY BIRTHDAY ISHAA (DAUGHTER)</title>
+    <title>Extreme Vintage Birthday Scrapbook (16 Pages)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -17,14 +17,29 @@
 </head>
 <body class="min-h-screen text-amber-950 flex flex-col justify-between relative selection:bg-amber-300 overflow-x-hidden">
 
-    <!-- Welcome Overlay -->
-    <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/85 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-700">
-        <div class="bg-[#f4eccf] border-4 border-amber-900/50 p-8 rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden">
-            <div class="text-4xl mb-2 animate-bounce">🎂✨🎉</div>
-            <h2 class="heading-font text-3xl text-amber-900 mb-3 font-bold">✨ A Special Birthday Scrapbook ✨</h2>
-            <p class="text-lg text-amber-800 mb-6 font-semibold">Click below to open your 16-page vintage scrapbook with music, funny moments & magical animations!</p>
-            <button onclick="startScrapbook()" class="px-8 py-3 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-xl hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
-                <i class="fa-solid fa-heart text-rose-400 animate-pulse"></i> Open Scrapbook
+    <!-- Gorgeous Animated Birthday Cake Cover Page (Welcome Overlay) -->
+    <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/90 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-all duration-700">
+        <div class="bg-[#faf4e1] border-4 border-amber-900/60 p-8 rounded-3xl shadow-2xl max-w-lg w-full relative overflow-hidden">
+            <!-- Decorative Ribbon / Stamp -->
+            <div class="absolute -top-10 -right-10 w-28 h-28 bg-rose-500/20 rounded-full blur-xl pointer-events-none"></div>
+
+            <!-- Animated Birthday Cake Icon -->
+            <div class="relative w-24 h-24 mx-auto mb-4 flex items-center justify-center bg-amber-200/60 border-2 border-amber-800/40 rounded-full shadow-inner">
+                <div class="absolute -top-3 flex gap-1.5 animate-bounce">
+                    <span class="text-xs bg-amber-500 w-1.5 h-4 rounded-full shadow-lg">🔥</span>
+                    <span class="text-xs bg-rose-500 w-1.5 h-4 rounded-full shadow-lg">🔥</span>
+                    <span class="text-xs bg-amber-500 w-1.5 h-4 rounded-full shadow-lg">🔥</span>
+                </div>
+                <span class="text-5xl mt-3">🎂</span>
+            </div>
+
+            <h2 class="heading-font text-3xl md:text-4xl text-amber-900 mb-2 font-bold tracking-wide">✨ Happy Birthday! ✨</h2>
+            <p class="text-lg text-amber-800 mb-6 font-semibold italic">
+                A magical 16-page vintage scrapbook crafted specially for you, filled with memories, music, and sweet surprises! 💖
+            </p>
+
+            <button onclick="startScrapbook()" class="px-8 py-3.5 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-xl hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto border-2 border-amber-400">
+                <i class="fa-solid fa-gift text-rose-400 animate-pulse"></i> Open Your Gift 🎈
             </button>
         </div>
     </div>
@@ -58,7 +73,6 @@
     <!-- Main Scrapbook Container -->
     <main class="flex-1 flex items-center justify-center p-4 z-10 relative my-2">
         <div class="scrapbook-container w-full max-w-5xl h-[540px] md:h-[490px] relative">
-            <!-- Dynamic Pages Wrapper -->
             <div id="pages-wrapper" class="w-full h-full relative"></div>
         </div>
     </main>
