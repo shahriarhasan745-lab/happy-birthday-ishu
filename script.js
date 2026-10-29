@@ -7,14 +7,14 @@ const scrapbookData = [
         image1: "868403049_2034146983938570_365889107342376931_n.jpg",
         image2: "867070386_975619545618629_3336066903520033502_n.jpg",
         tag: "Chapter 1: Beautiful Beginning 🎈",
-        wish: "Happy Birthday to my favorite human! Cheers to another year of making questionable life choices together."
+        wish: "Happy Birthday to my favorite DAUGHTER! Cheers to another year of making questionable life choices together."
     },
     {
         type: 'standard',
         image1: "865862834_1496768158985678_6985069026965173472_n.jpg",
         image2: "865739118_1175957871661541_6265686729919635046_n.jpg",
         tag: "Chapter 2: Eternal Youth 🎂",
-        wish: "Don't count the candles, just enjoy the glow! You're not getting older, you're becoming a vintage classic edition."
+        wish: "Don't count the candles, just enjoy the glow! You're not getting older(CUZ YOU ARE MY DAUGHTER), you're becoming a vintage classic edition."
     },
     {
         type: 'standard',
