@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extreme Vintage Birthday Scrapbook (15 Pages)</title>
+    <title>Extreme Vintage Birthday Scrapbook (16 Pages)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -18,17 +18,18 @@
 <body class="min-h-screen text-amber-950 flex flex-col justify-between relative selection:bg-amber-300 overflow-x-hidden">
 
     <!-- Welcome Overlay -->
-    <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/80 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-700">
-        <div class="bg-[#f4eccf] border-4 border-amber-900/40 p-8 rounded-3xl shadow-2xl max-w-md w-full">
-            <h2 class="heading-font text-3xl text-amber-900 mb-3">✨ A Special Gift For You ✨</h2>
-            <p class="text-xl text-amber-800 mb-6 font-semibold">Click below to open your 15-page vintage scrapbook with music & magical animations!</p>
-            <button onclick="startScrapbook()" class="px-8 py-3 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-lg hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
+    <div id="welcome-overlay" class="fixed inset-0 bg-amber-950/85 backdrop-blur-md z-50 flex flex-col items-center justify-center text-center p-6 transition-opacity duration-700">
+        <div class="bg-[#f4eccf] border-4 border-amber-900/50 p-8 rounded-3xl shadow-2xl max-w-md w-full relative overflow-hidden">
+            <div class="text-4xl mb-2 animate-bounce">🎂✨🎉</div>
+            <h2 class="heading-font text-3xl text-amber-900 mb-3 font-bold">✨ A Special Birthday Scrapbook ✨</h2>
+            <p class="text-lg text-amber-800 mb-6 font-semibold">Click below to open your 16-page vintage scrapbook with music, funny moments & magical animations!</p>
+            <button onclick="startScrapbook()" class="px-8 py-3 bg-amber-900 text-amber-100 rounded-full text-xl font-bold shadow-xl hover:bg-amber-950 hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
                 <i class="fa-solid fa-heart text-rose-400 animate-pulse"></i> Open Scrapbook
             </button>
         </div>
     </div>
 
-    <!-- Background Audio (Updated with your exact audio filename) -->
+    <!-- Background Audio -->
     <audio id="bg-music" loop>
         <source src="rudo_made_it_COSKO_-_Golden_Brown_x_Love_Story_-_Slowed_(mp3.pm) (1).mp3" type="audio/mpeg">
         Apnar browser audio tag support kore na.
@@ -56,8 +57,8 @@
 
     <!-- Main Scrapbook Container -->
     <main class="flex-1 flex items-center justify-center p-4 z-10 relative my-2">
-        <div class="scrapbook-container w-full max-w-5xl h-[520px] md:h-[480px] relative">
-            <!-- 15 Pages Dynamic Wrapper -->
+        <div class="scrapbook-container w-full max-w-5xl h-[540px] md:h-[490px] relative">
+            <!-- Dynamic Pages Wrapper -->
             <div id="pages-wrapper" class="w-full h-full relative"></div>
         </div>
     </main>
@@ -70,7 +71,7 @@
             </button>
 
             <div class="text-xl md:text-2xl font-bold text-amber-900 min-w-[110px]">
-                Page <span id="page-num">1</span> / 15
+                Page <span id="page-num">1</span> / <span id="total-pages">16</span>
             </div>
 
             <button onclick="toggleAutoplay()" class="px-3 py-2 bg-amber-200 text-amber-900 rounded-full text-lg hover:bg-amber-300 transition flex items-center gap-1 border border-amber-400">
