@@ -1,113 +1,128 @@
 // ==========================================
-// CONFIGURATION: 16 Pages (Updated with new short filenames & Funny Roasts)
+// CONFIGURATION: 16 Pages (3 Photos per Page + Pure Roasting & Funny Vibes)
 // ==========================================
 const scrapbookData = [
     {
         type: 'standard',
         image1: "jpg1.jpg",
         image2: "jpg2.jpg",
+        image3: "jpg3.jpg",
         tag: "Chapter 1: Beautiful Beginning 🎈",
         wish: "Happy Birthday to my favorite human! God knows how I tolerate your dramatic behavior every single day."
     },
     {
         type: 'standard',
-        image1: "jpg3.jpg",
-        image2: "jpg4.jpg",
+        image1: "jpg4.jpg",
+        image2: "jpg5.jpg",
+        image3: "jpg6.jpg",
         tag: "Chapter 2: Vintage Classic 🎂",
         wish: "Don't count the candles, you're officially getting old & wise... well, mostly just old!"
     },
     {
         type: 'standard',
-        image1: "jpg5.jpg",
-        image2: "jpg6.jpg",
+        image1: "jpg7.jpg",
+        image2: "jpg8.jpg",
+        image3: "jpg9.jpg",
         tag: "Chapter 3: Partner in Crime 🕵️‍♂️",
         wish: "Another year of us making terrible decisions together and blaming each other afterwards!"
     },
     {
         type: 'standard',
-        image1: "jpg7.jpg",
-        image2: "jpg8.jpg",
+        image1: "jpg10.jpg",
+        image2: "jpg11.jpg",
+        image3: "jpg12.jpg",
         tag: "Chapter 4: Drama Queen 🎉",
         wish: "Happy Birthday! May your brain cells multiply as fast as your weird facial expressions!"
     },
     {
         type: 'standard',
-        image1: "jpg9.jpg",
-        image2: "jpg10.jpg",
+        image1: "jpg13.jpg",
+        image2: "jpg14.jpg",
+        image3: "jpg15.jpg",
         tag: "Chapter 5: Unstoppable Vibes ⚡",
         wish: "You look decent today, probably because of the lighting or 10 photo filters! 😜"
     },
     {
         type: 'standard',
-        image1: "jpg11.jpg",
-        image2: "jpg12.jpg",
+        image1: "jpg1.jpg",
+        image2: "jpg3.jpg",
+        image3: "jpg5.jpg",
         tag: "Chapter 6: Good Times 🌟",
         wish: "Here's to another year of hearing your endless gossip and pretending to actually listen!"
     },
     {
         type: 'standard',
-        image1: "jpg13.jpg",
-        image2: "jpg14.jpg",
+        image1: "jpg7.jpg",
+        image2: "jpg9.jpg",
+        image3: "jpg11.jpg",
         tag: "Chapter 7: Sweet Memories 🍭",
         wish: "May your day be as colorful as your sudden mood swings!"
     },
     {
         type: 'standard',
-        image1: "jpg15.jpg",
-        image2: "jpg1.jpg",
+        image1: "jpg13.jpg",
+        image2: "jpg15.jpg",
+        image3: "jpg2.jpg",
         tag: "Chapter 8: Dreamer 🌈",
         wish: "Dream big, think smart... but please fix your sleeping schedule first!"
     },
     {
         type: 'standard',
-        image1: "jpg2.jpg",
-        image2: "jpg3.jpg",
+        image1: "jpg4.jpg",
+        image2: "jpg6.jpg",
+        image3: "jpg8.jpg",
         tag: "Chapter 9: Golden Memories 🏆",
         wish: "Eat as much cake as you want today, you can start your 'imaginary diet' tomorrow!"
     },
     {
         type: 'standard',
-        image1: "jpg4.jpg",
-        image2: "jpg5.jpg",
+        image1: "jpg10.jpg",
+        image2: "jpg12.jpg",
+        image3: "jpg14.jpg",
         tag: "Chapter 10: Chaos Crew ✨",
         wish: "Shoutout to the only person who can match my level of madness every single day."
     },
     {
         type: 'standard',
-        image1: "jpg6.jpg",
-        image2: "jpg7.jpg",
+        image1: "jpg1.jpg",
+        image2: "jpg5.jpg",
+        image3: "jpg9.jpg",
         tag: "Chapter 11: Crazy Adventures 🚀",
         wish: "Life is full of mysteries, and how you survived this long is definitely one of them!"
     },
     {
         type: 'standard',
-        image1: "jpg8.jpg",
-        image2: "jpg9.jpg",
+        image1: "jpg2.jpg",
+        image2: "jpg7.jpg",
+        image3: "jpg12.jpg",
         tag: "Chapter 12: Big Smiles 😊",
         wish: "Keep smiling like an idiot today! It confuses people and makes them wonder what you're up to."
     },
     {
         type: 'standard',
-        image1: "jpg10.jpg",
-        image2: "jpg11.jpg",
+        image1: "jpg3.jpg",
+        image2: "jpg8.jpg",
+        image3: "jpg13.jpg",
         tag: "Chapter 13: Vintage Era 🌸",
         wish: "Looking at these old pictures reminds me of how weird we both were... wait, we still are!"
     },
     {
         type: 'standard',
-        image1: "jpg12.jpg",
-        image2: "jpg13.jpg",
+        image1: "jpg4.jpg",
+        image2: "jpg11.jpg",
+        image3: "jpg15.jpg",
         tag: "Chapter 14: Partners in Crime 💖",
         wish: "We will always be best friends because you already know way too many embarrassing secrets about me!"
     },
     {
         type: 'standard',
-        image1: "jpg14.jpg",
-        image2: "jpg15.jpg",
+        image1: "jpg5.jpg",
+        image2: "jpg10.jpg",
+        image3: "jpg14.jpg",
         tag: "Chapter 15: Grand Finale 🎆",
         wish: "Happy Birthday! Hope your day is as awesome and noisy as you are. Treat de ekhon jaldi! 🎉"
     },
-    // DEDICATED FUNNY MEMORIES PAGE (CHAPTER 16)
+    // DEDICATED ROASTING FUNNY MEMORIES PAGE (CHAPTER 16)
     {
         type: 'funnyCollage',
         funnyImages: [
@@ -128,13 +143,14 @@ let autoplayTimer = null;
 let typingInterval = null;
 let isMusicPlaying = false;
 
+// Direct Overlay Dismiss & Start Scrapbook
 function startScrapbook() {
     const overlay = document.getElementById('welcome-overlay');
     if (overlay) {
         overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
         setTimeout(() => {
             overlay.style.display = 'none';
-            overlay.remove();
         }, 500);
     }
 
@@ -143,7 +159,11 @@ function startScrapbook() {
         audio.play().then(() => {
             isMusicPlaying = true;
             updateMusicIcon();
-        }).catch(e => console.log("Audio autoplay restricted:", e));
+        }).catch(e => {
+            console.log("Audio autoplay prevented:", e);
+            isMusicPlaying = false;
+            updateMusicIcon();
+        });
     }
 
     createFloatingElements();
@@ -159,8 +179,10 @@ function toggleMusic() {
         audio.pause();
         isMusicPlaying = false;
     } else {
-        audio.play().catch(e => console.log("Audio play error:", e));
-        isMusicPlaying = true;
+        audio.play().then(() => {
+            isMusicPlaying = true;
+            updateMusicIcon();
+        }).catch(e => console.log("Audio play error:", e));
     }
     updateMusicIcon();
 }
@@ -237,18 +259,27 @@ function renderPages() {
                 </div>
             `;
         } else {
+            // 3 Photos per Page Layout
             pageEl.innerHTML = `
                 <div class="w-full md:w-1/2 flex items-center justify-center relative h-64 md:h-full">
-                    <div class="photo-frame-1 absolute left-2 md:left-4 top-4 w-36 md:w-44 bg-white p-2 pb-6 shadow-xl border border-amber-200 rounded z-10">
-                        <div class="w-full h-32 md:h-38 overflow-hidden bg-amber-100 rounded">
-                            <img src="${data.image1}" alt="Memory A" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Photo+Missing'">
+                    <!-- Photo 1 -->
+                    <div class="absolute left-1 top-2 w-32 md:w-38 bg-white p-1.5 pb-5 shadow-xl border border-amber-200 rounded transform -rotate-6 z-10 hover:scale-110 hover:z-40 transition">
+                        <div class="w-full h-24 md:h-30 overflow-hidden bg-amber-100 rounded">
+                            <img src="${data.image1}" alt="Memory A" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Photo'">
                         </div>
                     </div>
-                    <div class="photo-frame-2 absolute right-2 md:right-6 bottom-4 w-38 md:w-48 bg-white p-2 pb-6 shadow-2xl border border-amber-200 rounded z-20">
-                        <div class="w-full h-36 md:h-42 overflow-hidden bg-amber-100 rounded">
-                            <img src="${data.image2}" alt="Memory B" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Photo+Missing'">
+                    <!-- Photo 2 -->
+                    <div class="absolute right-1 top-4 w-32 md:w-38 bg-white p-1.5 pb-5 shadow-xl border border-amber-200 rounded transform rotate-6 z-20 hover:scale-110 hover:z-40 transition">
+                        <div class="w-full h-24 md:h-30 overflow-hidden bg-amber-100 rounded">
+                            <img src="${data.image2}" alt="Memory B" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Photo'">
                         </div>
-                        <div class="mt-1 text-center text-amber-950 text-sm md:text-base font-bold">
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="absolute bottom-1 left-1/4 w-34 md:w-42 bg-white p-1.5 pb-6 shadow-2xl border border-amber-200 rounded transform -rotate-2 z-30 hover:scale-110 hover:z-40 transition">
+                        <div class="w-full h-24 md:h-30 overflow-hidden bg-amber-100 rounded">
+                            <img src="${data.image3}" alt="Memory C" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=Photo'">
+                        </div>
+                        <div class="mt-1 text-center text-amber-950 text-xs md:text-sm font-bold truncate">
                             ${data.tag}
                         </div>
                     </div>
@@ -261,7 +292,7 @@ function renderPages() {
                     </div>
                     <div class="text-right mt-2">
                         <span class="inline-block border-b-2 border-amber-800/40 text-amber-800 text-base md:text-lg italic">
-                            ~ Forever & Always 💕
+                            ~ Stay Roasted 🔥
                         </span>
                     </div>
                 </div>
@@ -297,7 +328,7 @@ function triggerParticleBurst() {
     const container = document.getElementById('particle-container');
     if (!container) return;
     container.innerHTML = '';
-    const symbols = ['💖', '✨', '⭐', '🎈', '🤪'];
+    const symbols = ['💖', '✨', '⭐', '🎈', '🤪', '🔥'];
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
 
@@ -388,3 +419,11 @@ function toggleAutoplay() {
         stopAutoplay();
     }
 }
+
+// Fallback direct event listener for overlay
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('open-gift-btn');
+    if (btn) {
+        btn.addEventListener('click', startScrapbook);
+    }
+});
