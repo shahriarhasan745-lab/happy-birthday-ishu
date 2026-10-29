@@ -13,7 +13,7 @@ body {
     font-family: 'Cinzel', serif;
 }
 
-/* Ambient Floating Background Elements */
+/* Floating Elements */
 @keyframes floatUp {
     0% {
         transform: translateY(105vh) rotate(0deg) scale(0.8);
@@ -33,7 +33,7 @@ body {
     animation: floatUp linear infinite;
 }
 
-/* 2-Photo Collage Layout Styling */
+/* Photo Frames Styling */
 .photo-frame-1 {
     animation: polaroidSwayLeft 5s ease-in-out infinite alternate;
 }
@@ -51,12 +51,13 @@ body {
     100% { transform: rotate(8deg) translateY(-6px); }
 }
 
-.photo-frame-1:hover, .photo-frame-2:hover {
-    transform: scale(1.08) rotate(0deg) z-index: 30 !important;
+.photo-frame-1:hover, .photo-frame-2:hover, .funny-frame:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 40 !important;
     box-shadow: 0 20px 35px rgba(0,0,0,0.3);
 }
 
-/* 3D Book Page Flip Transitions */
+/* 3D Book Page Transitions */
 .scrapbook-container {
     perspective: 1800px;
 }
@@ -83,15 +84,7 @@ body {
     box-shadow: 0 20px 40px -10px rgba(90, 60, 30, 0.25);
 }
 
-/* Washi Tape Accent */
-.washi-tape {
-    background: rgba(230, 190, 138, 0.8);
-    backdrop-filter: blur(2px);
-    border: 1px dashed rgba(160, 110, 50, 0.5);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Typing Cursor Effect */
+/* Cursor Typing */
 .typing-cursor::after {
     content: '|';
     animation: blink 0.8s infinite;
@@ -103,7 +96,7 @@ body {
     50% { opacity: 0; }
 }
 
-/* Particle Burst Animation */
+/* Particle Animation */
 @keyframes burstParticle {
     0% {
         transform: translate(0, 0) scale(1) rotate(0deg);
