@@ -1,6 +1,5 @@
 // ==========================================
 // CONFIGURATION: 15 Pages with 2 Photos Each
-// Using the image filenames provided in screenshots
 // ==========================================
 const scrapbookData = [
     {
