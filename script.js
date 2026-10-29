@@ -130,7 +130,11 @@ const scrapbookData = [
             "Screenshot 2026-10-29 212907.png",
             "Screenshot 2026-10-29 212918.png",
             "Screenshot 2026-10-29 212933.png",
-            "Screenshot 2026-10-29 212950.png"
+            "Screenshot 2026-10-29 212950.png",
+            "Screenshot 2026-10-30 004501.png",
+            "Screenshot 2026-10-30 005202.png",
+            "Screenshot 2026-10-30 005220.png",
+            "Screenshot 2026-10-30 005250.png"
         ],
         tag: "Chapter 16: The Crime Scene 🤪",
         wish: "Warning: High level illegal facial expressions ahead! Delete korar jonne bribe kora lagbe, cheap e chharbo na! 😂 🔥"
